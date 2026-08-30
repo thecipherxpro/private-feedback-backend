@@ -1,0 +1,4 @@
+{
+  "name": "telnyx-webhook",
+  "entry": "base44/functions/telnyx-webhook/entry.ts"
+}

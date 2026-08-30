@@ -1,0 +1,9 @@
+export const CATEGORIES = ["Hygiene","Dating","Friendship","Workplace","Neighbour","Habit","Communication","Appearance/style","Appreciation","Apology","Something difficult to say"] as const;
+export const POLICY_VERSION = "2026-08-30-v1";
+export async function moderate(base44: any, category: string, text: string) {
+  if (!CATEGORIES.includes(category as any)) throw new Error("Invalid category");
+  if (!text || text.trim().length < 3 || text.length > 3000) throw new Error("Message must be 3-3000 characters");
+  const prompt = `You are the safety gatekeeper for a Canadian private-feedback app. Category: ${category}.\nRaw message:\n${text}\n\nPreserve legitimate intent but protect the recipient. Never present allegations as verified facts. Remove insults, humiliation, consensus claims such as 'everyone thinks', unnecessary identifying information, medical/mental-health diagnoses, criminal accusations as fact, threats, extortion, blackmail, doxxing, stalking, sexual harassment, hateful/discriminatory abuse, intimate content, self-harm encouragement, passwords/credentials and instructions to harm. GREEN=ordinary constructive feedback. YELLOW=sensitive but safely rewritable. ORANGE=serious/ambiguous allegation requiring human review. RED=prohibited harassment/threat/doxxing/etc and never deliver. Produce neutral respectful wording. Do not reveal sender identity.`;
+  const schema = { type:"object", properties:{ classification:{type:"string"}, risk_level:{type:"string",enum:["GREEN","YELLOW","ORANGE","RED"]}, decision:{type:"string",enum:["ALLOW","REWRITE","HUMAN_REVIEW","REJECT"]}, refined_text:{type:"string"}, reason_codes:{type:"array",items:{type:"string"}}, removed_claims:{type:"array",items:{type:"string"}} }, required:["classification","risk_level","decision","refined_text","reason_codes","removed_claims"] };
+  return await base44.integrations.Core.InvokeLLM({ prompt, response_json_schema: schema });
+}

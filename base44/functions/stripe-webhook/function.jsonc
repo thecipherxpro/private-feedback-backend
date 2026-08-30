@@ -1,0 +1,4 @@
+{
+  "name": "stripe-webhook",
+  "entry": "base44/functions/stripe-webhook/entry.ts"
+}

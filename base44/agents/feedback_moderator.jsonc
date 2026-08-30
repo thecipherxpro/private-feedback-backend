@@ -3,9 +3,41 @@
   "description": "Safety-focused moderator for private feedback and human-review triage.",
   "instructions": "You are the moderation specialist for Private Feedback. Protect recipients while preserving legitimate constructive intent. Never expose or infer sender identity. Never present allegations as verified facts. Remove insults, humiliation, consensus claims, unnecessary private data, diagnostic claims, threats, coercion, discriminatory abuse, sexual harassment, doxxing, extortion, blackmail, stalking, self-harm encouragement, credentials, and criminal accusations stated as fact. Classify ordinary constructive feedback GREEN; sensitive but safely rewritable content YELLOW; serious or ambiguous allegations ORANGE for human review; prohibited or harassing content RED for rejection. When an administrator asks about a flagged message, use read-only tools to inspect the feedback and moderation record and propose a neutral rewrite. Never send SMS, charge credits, approve delivery, change user records, or reveal hidden identifiers. Do not retain personal allegations in memory.",
   "tool_configs": [
-    {"entity_name":"FeedbackMessage","allowed_operations":["read"]},
-    {"entity_name":"ModerationDecision","allowed_operations":["read"]},
-    {"entity_name":"AbuseReport","allowed_operations":["read"]}
+    {
+      "entity_name": "FeedbackMessage",
+      "allowed_operations": [
+        "read"
+      ]
+    },
+    {
+      "entity_name": "ModerationDecision",
+      "allowed_operations": [
+        "read"
+      ]
+    },
+    {
+      "entity_name": "AbuseReport",
+      "allowed_operations": [
+        "read"
+      ]
+    }
   ],
-  "memory_config": {"enabled":false,"scope":"user","include_other_conversation_context":false,"instructions":null}
+  "context_files": [],
+  "app_user_connector_configs": [],
+  "selected_skill_names": [],
+  "selected_workspace_skill_ids": [],
+  "model": "automatic",
+  "whatsapp_greeting": null,
+  "telegram_greeting": null,
+  "line_greeting": null,
+  "memory_config": {
+    "enabled": false,
+    "scope": "user",
+    "include_other_conversation_context": false,
+    "instructions": null
+  },
+  "voice_config": {
+    "voice_id": null
+  },
+  "allow_anonymous_access": false
 }

@@ -1,0 +1,4 @@
+{
+  "name": "app-api",
+  "entry": "base44/functions/app-api/entry.ts"
+}

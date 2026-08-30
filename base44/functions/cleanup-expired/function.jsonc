@@ -1,0 +1,4 @@
+{
+  "name": "cleanup-expired",
+  "entry": "base44/functions/cleanup-expired/entry.ts"
+}
