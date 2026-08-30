@@ -1,0 +1,8 @@
+{
+  "name": "Private Feedback Backend",
+  "description": "Backend-only Base44 service for anonymous AI-moderated private feedback, Telnyx SMS, Stripe credits, secure links and abuse controls.",
+  "visibility": "private",
+  "entitiesDir": "./entities",
+  "functionsDir": "./functions",
+  "agentsDir": "./agents"
+}
