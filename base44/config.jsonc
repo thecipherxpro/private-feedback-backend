@@ -1,8 +1,14 @@
 {
-  "name": "Private Feedback Backend",
-  "description": "Backend-only Base44 service for anonymous AI-moderated private feedback, Telnyx SMS, Stripe credits, secure links and abuse controls.",
+  "name": "Private Feedback",
+  "description": "React + Vite Private Feedback app with Base44 backend, AI moderation, Telnyx SMS, Stripe credits and secure feedback links.",
   "visibility": "private",
   "entitiesDir": "./entities",
   "functionsDir": "./functions",
-  "agentsDir": "./agents"
+  "agentsDir": "./agents",
+  "site": {
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "serveCommand": "npm run dev",
+    "outputDirectory": "./dist"
+  }
 }

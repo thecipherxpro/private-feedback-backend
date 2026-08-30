@@ -1,0 +1,2 @@
+import React from 'react';
+export default function UserNotRegisteredError(){return <div className="flex min-h-screen items-center justify-center bg-slate-50 p-6"><div className="max-w-md rounded-2xl border bg-white p-8 text-center"><h1 className="text-2xl font-semibold">Access restricted</h1><p className="mt-3 text-sm text-muted-foreground">You are not registered to use this application. Please contact the app administrator to request access.</p></div></div>;}

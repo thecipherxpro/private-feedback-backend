@@ -1,7 +1,33 @@
-# Private Feedback Base44 Backend
+# Private Feedback
 
-Backend-only Base44 service for the private feedback product.
+Full-stack Base44 application with a React + Vite frontend and Base44-native backend.
 
-Base44 App ID: `6a94782e8e3426bea743504c`
+## Stack
+- React 18 + Vite
+- Tailwind CSS + shadcn/Radix-style UI primitives
+- Base44 Auth + SDK
+- Base44 Entities, Functions and AI Agent
+- Telnyx SMS integration
+- Stripe credits + Automatic Tax
 
-This repository contains Base44 entity schemas, serverless functions, shared security/moderation utilities, and the `feedback_moderator` AI agent. External secrets are intentionally not committed.
+## Base44 app
+App ID: `6a9483ca2476b4e2122ed931`
+
+## Run locally
+```bash
+npm install
+npm run dev
+```
+
+## Build
+```bash
+npm run build
+```
+
+## Deploy to Base44
+Authenticate the Base44 CLI, then:
+```bash
+npx base44 --app-id 6a9483ca2476b4e2122ed931 deploy --build -y
+```
+
+Required secrets are documented in `.env.example`. Never commit real secret values.
