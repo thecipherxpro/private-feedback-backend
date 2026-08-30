@@ -1,0 +1,13 @@
+{
+  "name": "private-feedback-base44-backend",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "base44:deploy": "base44 deploy",
+    "base44:functions": "base44 functions deploy",
+    "base44:agents": "base44 agents push -y"
+  },
+  "devDependencies": {
+    "base44": "^0.1.12"
+  }
+}
